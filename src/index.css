@@ -1,13 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  overflow-x: hidden;
+  background-color: #0a0a0b;
+  color: #fafafa;
+  scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Sophisticated gradient text with dark mode enhancement */
+.gradient-text {
+  background: linear-gradient(135deg, #AC41F2 0%, #79F2E6 70%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: brightness(1.1);
+}
+
+/* Enhanced glass morphism for dark mode - improved visibility */
+.glass-dark {
+  background: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(172, 65, 242, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(121, 242, 230, 0.1);
+  border-radius: 16px;
+}
+
+.glass-light {
+  background: rgba(39, 39, 42, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(121, 242, 230, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(172, 65, 242, 0.1);
+  border-radius: 16px;
+}
+
+/* Sophisticated dark surfaces */
+.surface-dark {
+  background: linear-gradient(145deg, #18181b, #27272a);
+  border: 1px solid rgba(63, 63, 70, 0.3);
+}
+
+.surface-elevated {
+  background: linear-gradient(145deg, #27272a, #3f3f46);
+  border: 1px solid rgba(113, 113, 122, 0.2);
+}
+
+/* Elegant card styles with enhanced glassmorphism */
+.card-dark {
+  background: linear-gradient(135deg, rgba(31, 31, 35, 0.9), rgba(42, 42, 47, 0.8));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(172, 65, 242, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(121, 242, 230, 0.05);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(172, 65, 242, 0.15);
+  border-color: rgba(172, 65, 242, 0.3);
+  backdrop-filter: blur(24px);
+}
+
+/* Premium button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #AC41F2 0%, #9333ea 100%);
+  border: 1px solid rgba(172, 65, 242, 0.3);
+  box-shadow: 0 4px 16px rgba(172, 65, 242, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+  box-shadow: 0 8px 32px rgba(172, 65, 242, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(121, 242, 230, 0.1);
+  border: 1px solid rgba(121, 242, 230, 0.3);
+  color: #79F2E6;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background: rgba(121, 242, 230, 0.2);
+  border-color: rgba(121, 242, 230, 0.5);
+  box-shadow: 0 4px 16px rgba(121, 242, 230, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Vortize Signature Visual System */
+
+/* Main floating orb system - Vortize's signature visual element */
+.vortize-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: vortize-float 12s ease-in-out infinite;
+}
+
+.vortize-orb-primary {
+  background: radial-gradient(circle at 30% 30%, rgba(172, 65, 242, 0.6) 0%, rgba(172, 65, 242, 0.3) 40%, rgba(172, 65, 242, 0.1) 70%, transparent 85%);
+  width: 300px;
+  height: 300px;
+  filter: blur(1.5px);
+  animation: vortize-float 15s ease-in-out infinite;
+  box-shadow: 0 0 60px rgba(172, 65, 242, 0.3), inset 0 0 30px rgba(172, 65, 242, 0.1);
+}
+
+.vortize-orb-secondary {
+  background: radial-gradient(circle at 70% 40%, rgba(121, 242, 230, 0.5) 0%, rgba(121, 242, 230, 0.25) 50%, rgba(121, 242, 230, 0.1) 75%, transparent 90%);
+  width: 240px;
+  height: 240px;
+  filter: blur(1px);
+  animation: vortize-float 18s ease-in-out infinite reverse;
+  box-shadow: 0 0 50px rgba(121, 242, 230, 0.25), inset 0 0 25px rgba(121, 242, 230, 0.1);
+}
+
+.vortize-orb-accent {
+  background: radial-gradient(circle at 50% 20%, rgba(36, 28, 89, 0.7) 0%, rgba(36, 28, 89, 0.35) 45%, rgba(36, 28, 89, 0.15) 70%, transparent 85%);
+  width: 180px;
+  height: 180px;
+  filter: blur(0.8px);
+  animation: vortize-float 20s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(36, 28, 89, 0.4), inset 0 0 20px rgba(36, 28, 89, 0.2);
+}
+
+.vortize-orb-small {
+  background: radial-gradient(circle at 60% 60%, rgba(172, 65, 242, 0.8) 0%, rgba(121, 242, 230, 0.4) 50%, rgba(172, 65, 242, 0.2) 80%, transparent 95%);
+  width: 120px;
+  height: 120px;
+  filter: blur(0.3px);
+  animation: vortize-float 10s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(172, 65, 242, 0.3), 0 0 15px rgba(121, 242, 230, 0.2);
+}
+
+/* Enhanced floating animation */
+@keyframes vortize-float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: translateY(-30px) translateX(15px) scale(1.05);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-20px) translateX(-10px) scale(0.95);
+    opacity: 0.7;
+  }
+  75% { 
+    transform: translateY(-40px) translateX(20px) scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+/* Vortize brand patterns - removed grid pattern */
+.vortize-pattern-dots {
+  background-image: radial-gradient(circle at 2px 2px, rgba(172, 65, 242, 0.08) 1px, transparent 0);
+  background-size: 80px 80px;
+  opacity: 0.3;
+}
+
+.vortize-pattern-organic {
+  background-image: radial-gradient(ellipse at top left, rgba(172, 65, 242, 0.05) 0%, transparent 60%),
+                    radial-gradient(ellipse at bottom right, rgba(121, 242, 230, 0.03) 0%, transparent 60%);
+}
+
+/* Unified black background for all sections with smooth transitions */
+.vortize-section-base {
+  background: #0a0a0b;
+  position: relative;
+}
+
+.vortize-section-base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(10, 10, 11, 1), rgba(10, 10, 11, 0.9), rgba(10, 10, 11, 0.7), rgba(10, 10, 11, 0.4), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vortize-section-base::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(10, 10, 11, 1), rgba(10, 10, 11, 0.9), rgba(10, 10, 11, 0.7), rgba(10, 10, 11, 0.4), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vortize-section-variant1 {
+  background: #0a0a0b;
+  position: relative;
+}
+
+.vortize-section-variant1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(10, 10, 11, 0.98), rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vortize-section-variant1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(10, 10, 11, 0.98), rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vortize-section-variant2 {
+  background: #0a0a0b;
+  position: relative;
+}
+
+.vortize-section-variant2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(10, 10, 11, 0.98), rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vortize-section-variant2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(10, 10, 11, 0.98), rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vortize-section-variant3 {
+  background: #0a0a0b;
+  position: relative;
+}
+
+.vortize-section-variant3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(10, 10, 11, 0.98), rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vortize-section-variant3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(10, 10, 11, 0.98), rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Smooth section transitions - removed problematic overlays */
+
+/* Clean experience elements without sliding effect */
+.vortize-experience-element {
+  position: relative;
+  overflow: hidden;
+}
+
+.vortize-experience-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(121, 242, 230, 0.03) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vortize-experience-element:hover::before {
+  opacity: 1;
+}
+
+/* BTL-inspired interaction elements */
+.vortize-interactive {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.vortize-interactive::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(172, 65, 242, 0.2) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.vortize-interactive:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Enhanced card system with better glassmorphism */
+.vortize-card {
+  background: linear-gradient(135deg, rgba(24, 24, 27, 0.9) 0%, rgba(39, 39, 42, 0.8) 100%);
+  border: 1px solid rgba(172, 65, 242, 0.2);
+  backdrop-filter: blur(24px);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(121, 242, 230, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vortize-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(172, 65, 242, 0.6), rgba(121, 242, 230, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vortize-card:hover {
+  border-color: rgba(172, 65, 242, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(121, 242, 230, 0.15);
+  backdrop-filter: blur(28px);
+}
+
+.vortize-card:hover::before {
+  opacity: 1;
+}
+
+/* Memory-creating visual effects */
+.vortize-memory-trail {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(121, 242, 230, 0.6);
+  border-radius: 50%;
+  animation: vortize-trail 4s linear infinite;
+}
+
+@keyframes vortize-trail {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(100px) translateY(-50px) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(200px) translateY(30px) scale(0.6);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateX(150px) translateY(-20px) scale(0.4);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(300px) translateY(0) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced text styles for better readability */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+p {
+  line-height: 1.7;
+  color: #e4e4e7;
+  font-weight: 400;
+}
+
+.text-enhanced {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-gradient-enhanced {
+  background: linear-gradient(135deg, #AC41F2 0%, #79F2E6 70%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: brightness(1.1);
+  text-shadow: none;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(172, 65, 242, 0.3);
+  color: #fafafa;
+}
+
+/* Focus styles */
+.focus-visible:focus-visible {
+  outline: 2px solid #AC41F2;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
