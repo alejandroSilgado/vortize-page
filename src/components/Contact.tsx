@@ -56,11 +56,6 @@ const Contact: React.FC = () => {
       icon: <Clock className="w-5 h-5" />,
       label: "Horario",
       value: "Lun - Vie: 8AM - 6PM"
-    },
-    {
-      icon: <Star className="w-5 h-5" />,
-      label: "Experiencia",
-      value: "5+ años en el mercado"
     }
   ];
 

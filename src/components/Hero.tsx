@@ -138,36 +138,6 @@ const Hero: React.FC = () => {
             </motion.button>
           </motion.div>
 
-          {/* Enhanced stats with impact focus */}
-          <motion.div
-            variants={fadeInUp}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16"
-          >
-            <motion.div 
-              className="text-center vortize-card p-6 rounded-2xl vortize-interactive"
-              whileHover={{ scale: 1.02, y: -4 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-vortize-turquoise-400 mb-2">500+</div>
-              <div className="text-sm text-gray-400 mb-1">Experiencias Creadas</div>
-              <div className="text-xs text-gray-500">Cada una única e inolvidable</div>
-            </motion.div>
-            <motion.div 
-              className="text-center vortize-card p-6 rounded-2xl vortize-interactive"
-              whileHover={{ scale: 1.02, y: -4 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-vortize-purple-400 mb-2">98%</div>
-              <div className="text-sm text-gray-400 mb-1">Impacto Generado</div>
-              <div className="text-xs text-gray-500">Conexiones humanas reales</div>
-            </motion.div>
-            <motion.div 
-              className="text-center vortize-card p-6 rounded-2xl vortize-interactive"
-              whileHover={{ scale: 1.02, y: -4 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">∞</div>
-              <div className="text-sm text-gray-400 mb-1">Memorias Creadas</div>
-              <div className="text-xs text-gray-500">Que trascienden en el tiempo</div>
-            </motion.div>
-          </motion.div>
 
           {/* Scroll indicator */}
           <motion.div
