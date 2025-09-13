@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
       description: "Respuesta inmediata",
       action: "Contactar ahora",
       gradient: "from-green-500 to-green-600",
-      href: "https://wa.me/+573000000000",
+      href: "https://wa.me/+573004031332",
       highlight: true
     },
     {
@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
       description: "Llamada directa",
       action: "Llamar",
       gradient: "from-vortize-purple-500 to-vortize-purple-700",
-      href: "tel:+573000000000"
+      href: "tel:+573004031332"
     },
     {
       icon: <Mail className="w-7 h-7" />,
@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Ubicación",
-      value: "Bogotá, Colombia"
+      value: "Oficina 705, edificio Sigma, avenida carrera 19 # 95-20 oficina 708"
     },
     {
       icon: <Clock className="w-5 h-5" />,
@@ -242,7 +242,7 @@ const Contact: React.FC = () => {
               {/* Enhanced CTAs */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                 <motion.a
-                  href="https://wa.me/+573000000000"
+                  href="https://wa.me/+573004031332"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-white font-semibold py-4 px-8 rounded-2xl flex items-center justify-center gap-3 text-lg"

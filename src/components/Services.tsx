@@ -11,7 +11,9 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  ChefHat,
+  Palette
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { cn, fadeInUp, staggerContainer } from '../lib/utils';
@@ -89,6 +91,26 @@ const Services: React.FC = () => {
       borderColor: "border-vortize-navy-600/20",
       features: ["Personal", "Logística", "Diseño", "Producción"],
       image: "/assets/photos/6. Servicios complementarios – Personal especializado.png"
+    },
+    {
+      icon: <ChefHat className="w-8 h-8" />,
+      title: "Catering",
+      subtitle: "Experiencias Gastronómicas",
+      description: "Servicios gastronómicos especializados que complementan perfectamente tus eventos, desde coffee breaks hasta banquetes completos, creando experiencias memorables.",
+      gradient: "from-orange-500 to-red-600",
+      borderColor: "border-orange-500/20",
+      features: ["Coffee Breaks", "Banquetes", "Cocktails", "Menús Temáticos"],
+      image: "/assets/photos/cathering.png"
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Diseños de Piezas 2D y 3D",
+      subtitle: "Creatividad Visual",
+      description: "Desarrollamos piezas gráficas y elementos tridimensionales únicos que dan vida a tu marca y generan impacto visual en cada evento.",
+      gradient: "from-cyan-500 to-blue-600",
+      borderColor: "border-cyan-500/20",
+      features: ["Diseño Gráfico", "Modelado 3D", "Branding", "Elementos Visuales"],
+      image: "/assets/photos/diseños_3d_2d.png"
     }
   ];
 
