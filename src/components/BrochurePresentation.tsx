@@ -29,14 +29,14 @@ const BrochurePresentation: React.FC = () => {
   const slideStyle: React.CSSProperties = {
     width: '100vw',
     height: '100vh',
-    padding: isFullscreen ? '60px 80px' : '40px 60px',
+    padding: isFullscreen ? '60px 80px' : window.innerWidth < 768 ? '15px 10px' : '40px 60px',
     margin: '0',
     background: isDarkMode ? '#0f0f0f' : 'white',
     boxShadow: isFullscreen ? 'none' : (isDarkMode ? '0 8px 32px rgba(0,0,0,0.6)' : '0 8px 32px rgba(0,0,0,0.15)'),
     display: 'none',
     flexDirection: 'column',
     position: 'relative',
-    overflow: 'hidden',
+    overflow: 'auto',
     fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
     color: isDarkMode ? '#ffffff' : '#1a1a1a',
     borderRadius: isFullscreen ? '0' : '12px',
@@ -75,53 +75,63 @@ const BrochurePresentation: React.FC = () => {
   };
 
   const heroTitleStyle: React.CSSProperties = {
-    fontSize: 'clamp(48px, 6vw, 96px)',
+    fontSize: window.innerWidth < 768 ? 'clamp(32px, 8vw, 48px)' : 'clamp(48px, 6vw, 96px)',
     fontWeight: 900,
-    lineHeight: '0.9',
-    marginBottom: '30px',
-    color: isDarkMode ? '#ffffff' : '#1a1a1a'
+    lineHeight: window.innerWidth < 768 ? '1.1' : '0.9',
+    marginBottom: window.innerWidth < 768 ? '20px' : '30px',
+    color: isDarkMode ? '#ffffff' : '#1a1a1a',
+    textAlign: window.innerWidth < 768 ? 'center' : 'left'
   };
 
   const sectionTitleStyle: React.CSSProperties = {
-    fontSize: 'clamp(36px, 5vw, 72px)',
+    fontSize: window.innerWidth < 768 ? 'clamp(24px, 6vw, 36px)' : 'clamp(36px, 5vw, 72px)',
     fontWeight: 900,
     color: '#ac41f2',
-    marginBottom: '30px',
-    lineHeight: '1.1'
+    marginBottom: window.innerWidth < 768 ? '20px' : '30px',
+    lineHeight: '1.1',
+    textAlign: window.innerWidth < 768 ? 'center' : 'left'
   };
 
   const serviceTitleStyle: React.CSSProperties = {
-    fontSize: 'clamp(28px, 4vw, 56px)',
+    fontSize: window.innerWidth < 768 ? 'clamp(18px, 4.5vw, 24px)' : 'clamp(28px, 4vw, 56px)',
     fontWeight: 900,
     color: isDarkMode ? '#ffffff' : '#1a1a1a',
-    marginBottom: '20px',
-    lineHeight: '1.1'
+    marginBottom: window.innerWidth < 768 ? '12px' : '20px',
+    lineHeight: '1.2',
+    textAlign: window.innerWidth < 768 ? 'center' : 'left',
+    maxWidth: '100%',
+    wordWrap: 'break-word'
   };
 
   const serviceSubtitleStyle: React.CSSProperties = {
-    fontSize: 'clamp(18px, 2.5vw, 28px)',
+    fontSize: window.innerWidth < 768 ? 'clamp(14px, 3vw, 18px)' : 'clamp(18px, 2.5vw, 28px)',
     color: '#79f2e6',
     fontWeight: 600,
-    marginBottom: '25px'
+    marginBottom: window.innerWidth < 768 ? '15px' : '25px',
+    textAlign: window.innerWidth < 768 ? 'center' : 'left'
   };
 
   const serviceDescriptionStyle: React.CSSProperties = {
-    fontSize: 'clamp(16px, 1.8vw, 24px)',
+    fontSize: window.innerWidth < 768 ? 'clamp(12px, 2.2vw, 16px)' : 'clamp(16px, 1.8vw, 24px)',
     color: isDarkMode ? '#cccccc' : '#333',
-    lineHeight: '1.6',
-    marginBottom: '25px'
+    lineHeight: window.innerWidth < 768 ? '1.4' : '1.6',
+    marginBottom: window.innerWidth < 768 ? '12px' : '25px',
+    textAlign: window.innerWidth < 768 ? 'center' : 'left',
+    maxWidth: '100%',
+    wordWrap: 'break-word'
   };
 
   const serviceIconStyle: React.CSSProperties = {
-    width: 'clamp(80px, 8vw, 120px)',
-    height: 'clamp(80px, 8vw, 120px)',
+    width: window.innerWidth < 768 ? 'clamp(60px, 12vw, 80px)' : 'clamp(80px, 8vw, 120px)',
+    height: window.innerWidth < 768 ? 'clamp(60px, 12vw, 80px)' : 'clamp(80px, 8vw, 120px)',
     background: 'linear-gradient(135deg, #ac41f2, #79f2e6)',
-    borderRadius: '24px',
+    borderRadius: window.innerWidth < 768 ? '16px' : '24px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: 'white',
-    marginBottom: '20px'
+    marginBottom: window.innerWidth < 768 ? '15px' : '20px',
+    margin: window.innerWidth < 768 ? '0 auto 15px auto' : '0 0 20px 0'
   };
 
   const gradientTextStyle: React.CSSProperties = {
@@ -154,13 +164,14 @@ const BrochurePresentation: React.FC = () => {
   };
 
   const imageFrameStyle: React.CSSProperties = {
-    width: 'clamp(250px, 25vw, 350px)',
-    height: 'clamp(250px, 25vw, 350px)',
+    width: window.innerWidth < 768 ? 'clamp(150px, 40vw, 200px)' : 'clamp(250px, 25vw, 350px)',
+    height: window.innerWidth < 768 ? 'clamp(150px, 40vw, 200px)' : 'clamp(250px, 25vw, 350px)',
     borderRadius: '50%',
     overflow: 'hidden',
-    border: '6px solid #ac41f2',
-    boxShadow: '0 12px 40px rgba(172, 65, 242, 0.4)',
-    marginBottom: '20px'
+    border: window.innerWidth < 768 ? '4px solid #ac41f2' : '6px solid #ac41f2',
+    boxShadow: window.innerWidth < 768 ? '0 8px 25px rgba(172, 65, 242, 0.4)' : '0 12px 40px rgba(172, 65, 242, 0.4)',
+    marginBottom: window.innerWidth < 768 ? '15px' : '20px',
+    margin: window.innerWidth < 768 ? '0 auto 15px auto' : '0 0 20px 0'
   };
 
   const imageStyle: React.CSSProperties = {
@@ -181,16 +192,16 @@ const BrochurePresentation: React.FC = () => {
 
   const navigationStyle: React.CSSProperties = {
     position: 'fixed',
-    bottom: '30px',
+    bottom: window.innerWidth < 768 ? '15px' : '20px',
     left: '50%',
     transform: 'translateX(-50%)',
     display: showControls ? 'flex' : 'none',
     alignItems: 'center',
-    gap: '20px',
+    gap: window.innerWidth < 768 ? '8px' : '12px',
     zIndex: 1000,
     background: 'rgba(0,0,0,0.7)',
-    padding: '15px 25px',
-    borderRadius: '50px',
+    padding: window.innerWidth < 768 ? '6px 12px' : '8px 16px',
+    borderRadius: '25px',
     backdropFilter: 'blur(10px)'
   };
 
@@ -227,8 +238,8 @@ const BrochurePresentation: React.FC = () => {
     background: 'rgba(255,255,255,0.2)',
     border: 'none',
     borderRadius: '50%',
-    width: '50px',
-    height: '50px',
+    width: window.innerWidth < 768 ? '32px' : '40px',
+    height: window.innerWidth < 768 ? '32px' : '40px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -864,7 +875,13 @@ const BrochurePresentation: React.FC = () => {
           
           <h2 style={sectionTitleStyle}>Somos Vortize</h2>
           
-          <div style={{ display: 'flex', gap: '60px', alignItems: 'center', flex: 1 }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: window.innerWidth < 768 ? '30px' : '60px', 
+            alignItems: 'center', 
+            flex: 1,
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row'
+          }}>
             <div style={{ flex: 1 }}>
               <p style={serviceDescriptionStyle}>
                 <strong>Vortize</strong> es una agencia especializada en marketing experiencial y organización de eventos que transforma ideas en experiencias memorables.
@@ -874,11 +891,24 @@ const BrochurePresentation: React.FC = () => {
                 Nos enfocamos en crear conexiones auténticas entre las marcas y las personas a través de experiencias únicas que perduran en el tiempo y generan impacto real.
               </p>
               
-              <div style={{ marginTop: '40px' }}>
-                <h3 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '30px', color: '#ac41f2' }}>
+              <div style={{ marginTop: window.innerWidth < 768 ? '20px' : '40px' }}>
+                <h3 style={{ 
+                  fontSize: window.innerWidth < 768 ? '20px' : '32px', 
+                  fontWeight: 'bold', 
+                  marginBottom: window.innerWidth < 768 ? '20px' : '30px', 
+                  color: '#ac41f2',
+                  textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                }}>
                   Nuestra Propuesta de Valor
                 </h3>
-                <ul style={{ fontSize: '22px', lineHeight: '1.8', color: isDarkMode ? '#cccccc' : '#333', listStyle: 'none', padding: 0 }}>
+                <ul style={{ 
+                  fontSize: window.innerWidth < 768 ? '16px' : '22px', 
+                  lineHeight: '1.8', 
+                  color: isDarkMode ? '#cccccc' : '#333', 
+                  listStyle: 'none', 
+                  padding: 0,
+                  textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                }}>
                   <li style={{ marginBottom: '16px' }}>✨ <strong>Creatividad sin límites:</strong> Diseñamos experiencias únicas</li>
                   <li style={{ marginBottom: '16px' }}>🎯 <strong>Enfoque estratégico:</strong> Cada evento tiene un propósito claro</li>
                   <li style={{ marginBottom: '16px' }}>⚡ <strong>Ejecución impecable:</strong> Cuidamos cada detalle</li>
@@ -887,19 +917,58 @@ const BrochurePresentation: React.FC = () => {
               </div>
             </div>
             
-            <div style={{ flex: 0.4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '40px', marginTop: '60px' }}>
+            <div style={{ 
+              flex: window.innerWidth < 768 ? 'none' : '0.4', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center',
+              width: window.innerWidth < 768 ? '100%' : 'auto'
+            }}>
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: window.innerWidth < 768 ? 'repeat(2, 1fr)' : 'repeat(2, 1fr)', 
+                gap: window.innerWidth < 768 ? '20px' : '40px', 
+                marginTop: window.innerWidth < 768 ? '20px' : '60px',
+                width: window.innerWidth < 768 ? '100%' : 'auto'
+              }}>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '48px', fontWeight: 900, color: '#79f2e6', marginBottom: '12px' }}>100%</div>
-                  <div style={{ fontSize: '18px', color: isDarkMode ? '#888' : '#666', fontWeight: 500 }}>Compromiso</div>
+                  <div style={{ 
+                    fontSize: window.innerWidth < 768 ? '32px' : '48px', 
+                    fontWeight: 900, 
+                    color: '#79f2e6', 
+                    marginBottom: '12px' 
+                  }}>100%</div>
+                  <div style={{ 
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px', 
+                    color: isDarkMode ? '#888' : '#666', 
+                    fontWeight: 500 
+                  }}>Compromiso</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '48px', fontWeight: 900, color: '#79f2e6', marginBottom: '12px' }}>5★</div>
-                  <div style={{ fontSize: '18px', color: isDarkMode ? '#888' : '#666', fontWeight: 500 }}>Calificación</div>
+                  <div style={{ 
+                    fontSize: window.innerWidth < 768 ? '32px' : '48px', 
+                    fontWeight: 900, 
+                    color: '#79f2e6', 
+                    marginBottom: '12px' 
+                  }}>5★</div>
+                  <div style={{ 
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px', 
+                    color: isDarkMode ? '#888' : '#666', 
+                    fontWeight: 500 
+                  }}>Calificación</div>
                 </div>
                 <div style={{ textAlign: 'center', gridColumn: 'span 2' }}>
-                  <div style={{ fontSize: '48px', fontWeight: 900, color: '#79f2e6', marginBottom: '12px' }}>24h</div>
-                  <div style={{ fontSize: '18px', color: isDarkMode ? '#888' : '#666', fontWeight: 500 }}>Tiempo de respuesta</div>
+                  <div style={{ 
+                    fontSize: window.innerWidth < 768 ? '32px' : '48px', 
+                    fontWeight: 900, 
+                    color: '#79f2e6', 
+                    marginBottom: '12px' 
+                  }}>24h</div>
+                  <div style={{ 
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px', 
+                    color: isDarkMode ? '#888' : '#666', 
+                    fontWeight: 500 
+                  }}>Tiempo de respuesta</div>
                 </div>
               </div>
             </div>
@@ -916,10 +985,18 @@ const BrochurePresentation: React.FC = () => {
           
           <div style={{...orbPrimaryStyle, top: '20%', right: '15%'}}></div>
           
-          <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flex: 1 }}>
-            <div style={{ flex: 1 }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: window.innerWidth < 768 ? '20px' : '80px', 
+            alignItems: 'center', 
+            flex: 1,
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+            minHeight: window.innerWidth < 768 ? 'auto' : '100%',
+            padding: window.innerWidth < 768 ? '10px 0' : '0'
+          }}>
+            <div style={{ flex: 1, order: window.innerWidth < 768 ? 2 : 1 }}>
               <div style={serviceIconStyle}>
-                <Building size={60} />
+                <Building size={window.innerWidth < 768 ? 40 : 60} />
               </div>
               
               <h2 style={serviceTitleStyle}>Eventos Corporativos</h2>
@@ -931,14 +1008,20 @@ const BrochurePresentation: React.FC = () => {
                 hasta lanzamientos de producto, creamos experiencias que fortalecen tu marca.
               </p>
               
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
+              <div style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: window.innerWidth < 768 ? '8px' : '16px', 
+                marginBottom: window.innerWidth < 768 ? '20px' : '40px',
+                justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start'
+              }}>
                 {['Conferencias', 'Seminarios', 'Lanzamientos', 'Team Building'].map((feature, idx) => (
                   <span key={idx} style={{
                     background: 'linear-gradient(135deg, #ac41f2, #79f2e6)',
                     color: 'white',
-                    padding: '12px 24px',
+                    padding: window.innerWidth < 768 ? '8px 16px' : '12px 24px',
                     borderRadius: '25px',
-                    fontSize: '18px',
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px',
                     fontWeight: 600
                   }}>
                     {feature}
@@ -946,15 +1029,30 @@ const BrochurePresentation: React.FC = () => {
                 ))}
               </div>
               
-              <div style={{ padding: '30px', background: isDarkMode ? '#1a1a1a' : '#f8fafc', borderRadius: '16px' }}>
-                <p style={{ fontSize: '20px', color: isDarkMode ? '#aaa' : '#666', margin: 0 }}>
+              <div style={{ 
+                padding: window.innerWidth < 768 ? '20px' : '30px', 
+                background: isDarkMode ? '#1a1a1a' : '#f8fafc', 
+                borderRadius: '16px' 
+              }}>
+                <p style={{ 
+                  fontSize: window.innerWidth < 768 ? '16px' : '20px', 
+                  color: isDarkMode ? '#aaa' : '#666', 
+                  margin: 0,
+                  textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                }}>
                   <strong>Ideal para:</strong> Fortalecer relaciones con clientes, posicionar la marca 
                   en entornos estratégicos y generar experiencias memorables alineadas con objetivos comerciales.
                 </p>
               </div>
             </div>
             
-            <div style={{ flex: 0.4, display: 'flex', justifyContent: 'center' }}>
+            <div style={{ 
+              flex: window.innerWidth < 768 ? 'none' : '0.4', 
+              display: 'flex', 
+              justifyContent: 'center',
+              order: window.innerWidth < 768 ? 1 : 2,
+              width: window.innerWidth < 768 ? '100%' : 'auto'
+            }}>
               <div style={imageFrameStyle}>
                 <img 
                   src={serviceImages.conferencias} 
@@ -976,8 +1074,22 @@ const BrochurePresentation: React.FC = () => {
           
           <div style={{...orbSecondaryStyle, bottom: '20%', left: '8%'}}></div>
           
-          <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flex: 1 }}>
-            <div style={{ flex: 0.4, display: 'flex', justifyContent: 'center' }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: window.innerWidth < 768 ? '20px' : '80px', 
+            alignItems: 'center', 
+            flex: 1,
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+            minHeight: window.innerWidth < 768 ? 'auto' : '100%',
+            padding: window.innerWidth < 768 ? '10px 0' : '0'
+          }}>
+            <div style={{ 
+              flex: window.innerWidth < 768 ? 'none' : '0.4', 
+              display: 'flex', 
+              justifyContent: 'center',
+              order: window.innerWidth < 768 ? 1 : 1,
+              width: window.innerWidth < 768 ? '100%' : 'auto'
+            }}>
               <div style={imageFrameStyle}>
                 <img 
                   src={serviceImages.teambuilding} 
@@ -987,9 +1099,9 @@ const BrochurePresentation: React.FC = () => {
               </div>
             </div>
             
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, order: window.innerWidth < 768 ? 2 : 2 }}>
               <div style={serviceIconStyle}>
-                <Users size={60} />
+                <Users size={window.innerWidth < 768 ? 40 : 60} />
               </div>
               
               <h2 style={serviceTitleStyle}>Team Building</h2>
@@ -1001,14 +1113,20 @@ const BrochurePresentation: React.FC = () => {
                 vínculos sólidos y mejoran la dinámica de trabajo.
               </p>
               
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
+              <div style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: window.innerWidth < 768 ? '8px' : '16px', 
+                marginBottom: window.innerWidth < 768 ? '20px' : '40px',
+                justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start'
+              }}>
                 {['Dinámicas', 'Retiros', 'Workshops', 'Integración'].map((feature, idx) => (
                   <span key={idx} style={{
                     background: 'linear-gradient(135deg, #ac41f2, #79f2e6)',
                     color: 'white',
-                    padding: '12px 24px',
+                    padding: window.innerWidth < 768 ? '8px 16px' : '12px 24px',
                     borderRadius: '25px',
-                    fontSize: '18px',
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px',
                     fontWeight: 600
                   }}>
                     {feature}
@@ -1016,8 +1134,17 @@ const BrochurePresentation: React.FC = () => {
                 ))}
               </div>
               
-              <div style={{ padding: '30px', background: isDarkMode ? '#1a1a1a' : '#f8fafc', borderRadius: '16px' }}>
-                <p style={{ fontSize: '20px', color: isDarkMode ? '#aaa' : '#666', margin: 0 }}>
+              <div style={{ 
+                padding: window.innerWidth < 768 ? '20px' : '30px', 
+                background: isDarkMode ? '#1a1a1a' : '#f8fafc', 
+                borderRadius: '16px' 
+              }}>
+                <p style={{ 
+                  fontSize: window.innerWidth < 768 ? '16px' : '20px', 
+                  color: isDarkMode ? '#aaa' : '#666', 
+                  margin: 0,
+                  textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                }}>
                   <strong>Beneficios:</strong> Mejora la comunicación interna, fortalece el sentido de 
                   pertenencia y aumenta la productividad del equipo a través de experiencias compartidas.
                 </p>
@@ -1036,10 +1163,18 @@ const BrochurePresentation: React.FC = () => {
           
           <div style={{...orbPrimaryStyle, top: '25%', left: '20%'}}></div>
           
-          <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flex: 1 }}>
-            <div style={{ flex: 1 }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: window.innerWidth < 768 ? '20px' : '80px', 
+            alignItems: 'center', 
+            flex: 1,
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+            minHeight: window.innerWidth < 768 ? 'auto' : '100%',
+            padding: window.innerWidth < 768 ? '10px 0' : '0'
+          }}>
+            <div style={{ flex: 1, order: window.innerWidth < 768 ? 2 : 1 }}>
               <div style={serviceIconStyle}>
-                <MapPin size={60} />
+                <MapPin size={window.innerWidth < 768 ? 40 : 60} />
               </div>
               
               <h2 style={serviceTitleStyle}>Activaciones BTL</h2>
@@ -1051,14 +1186,20 @@ const BrochurePresentation: React.FC = () => {
                 conexiones directas con los consumidores en el punto de venta.
               </p>
               
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
+              <div style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: window.innerWidth < 768 ? '8px' : '16px', 
+                marginBottom: window.innerWidth < 768 ? '20px' : '40px',
+                justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start'
+              }}>
                 {['PDV', 'Guerrilla', 'Sampling', 'Experiencias'].map((feature, idx) => (
                   <span key={idx} style={{
                     background: 'linear-gradient(135deg, #ac41f2, #79f2e6)',
                     color: 'white',
-                    padding: '12px 24px',
+                    padding: window.innerWidth < 768 ? '8px 16px' : '12px 24px',
                     borderRadius: '25px',
-                    fontSize: '18px',
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px',
                     fontWeight: 600
                   }}>
                     {feature}
@@ -1066,15 +1207,30 @@ const BrochurePresentation: React.FC = () => {
                 ))}
               </div>
               
-              <div style={{ padding: '30px', background: isDarkMode ? '#1a1a1a' : '#f8fafc', borderRadius: '16px' }}>
-                <p style={{ fontSize: '20px', color: isDarkMode ? '#aaa' : '#666', margin: 0 }}>
+              <div style={{ 
+                padding: window.innerWidth < 768 ? '20px' : '30px', 
+                background: isDarkMode ? '#1a1a1a' : '#f8fafc', 
+                borderRadius: '16px' 
+              }}>
+                <p style={{ 
+                  fontSize: window.innerWidth < 768 ? '16px' : '20px', 
+                  color: isDarkMode ? '#aaa' : '#666', 
+                  margin: 0,
+                  textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                }}>
                   <strong>Resultados:</strong> Mayor visibilidad de marca, interacción directa con 
                   consumidores y generación de contenido orgánico para redes sociales.
                 </p>
               </div>
             </div>
             
-            <div style={{ flex: 0.4, display: 'flex', justifyContent: 'center' }}>
+            <div style={{ 
+              flex: window.innerWidth < 768 ? 'none' : '0.4', 
+              display: 'flex', 
+              justifyContent: 'center',
+              order: window.innerWidth < 768 ? 1 : 2,
+              width: window.innerWidth < 768 ? '100%' : 'auto'
+            }}>
               <div style={imageFrameStyle}>
                 <img 
                   src={serviceImages.btl} 
@@ -1096,8 +1252,22 @@ const BrochurePresentation: React.FC = () => {
           
           <div style={{...orbSecondaryStyle, top: '20%', left: '25%'}}></div>
           
-          <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flex: 1 }}>
-            <div style={{ flex: 0.4, display: 'flex', justifyContent: 'center' }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: window.innerWidth < 768 ? '20px' : '80px', 
+            alignItems: 'center', 
+            flex: 1,
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+            minHeight: window.innerWidth < 768 ? 'auto' : '100%',
+            padding: window.innerWidth < 768 ? '10px 0' : '0'
+          }}>
+            <div style={{ 
+              flex: window.innerWidth < 768 ? 'none' : '0.4', 
+              display: 'flex', 
+              justifyContent: 'center',
+              order: window.innerWidth < 768 ? 1 : 1,
+              width: window.innerWidth < 768 ? '100%' : 'auto'
+            }}>
               <div style={imageFrameStyle}>
                 <img 
                   src={serviceImages.catering} 
@@ -1107,9 +1277,9 @@ const BrochurePresentation: React.FC = () => {
               </div>
             </div>
             
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, order: window.innerWidth < 768 ? 2 : 2 }}>
               <div style={serviceIconStyle}>
-                <ChefHat size={60} />
+                <ChefHat size={window.innerWidth < 768 ? 40 : 60} />
               </div>
               
               <h2 style={serviceTitleStyle}>Catering</h2>
@@ -1121,14 +1291,20 @@ const BrochurePresentation: React.FC = () => {
                 memorables que deleitan y sorprenden a tus invitados.
               </p>
               
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
+              <div style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: window.innerWidth < 768 ? '8px' : '16px', 
+                marginBottom: window.innerWidth < 768 ? '20px' : '40px',
+                justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start'
+              }}>
                 {['Coffee Breaks', 'Banquetes', 'Cocktails', 'Menús Temáticos'].map((feature, idx) => (
                   <span key={idx} style={{
                     background: 'linear-gradient(135deg, #ac41f2, #79f2e6)',
                     color: 'white',
-                    padding: '12px 24px',
+                    padding: window.innerWidth < 768 ? '8px 16px' : '12px 24px',
                     borderRadius: '25px',
-                    fontSize: '18px',
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px',
                     fontWeight: 600
                   }}>
                     {feature}
@@ -1136,8 +1312,17 @@ const BrochurePresentation: React.FC = () => {
                 ))}
               </div>
               
-              <div style={{ padding: '30px', background: isDarkMode ? '#1a1a1a' : '#f8fafc', borderRadius: '16px' }}>
-                <p style={{ fontSize: '20px', color: isDarkMode ? '#aaa' : '#666', margin: 0 }}>
+              <div style={{ 
+                padding: window.innerWidth < 768 ? '20px' : '30px', 
+                background: isDarkMode ? '#1a1a1a' : '#f8fafc', 
+                borderRadius: '16px' 
+              }}>
+                <p style={{ 
+                  fontSize: window.innerWidth < 768 ? '16px' : '20px', 
+                  color: isDarkMode ? '#aaa' : '#666', 
+                  margin: 0,
+                  textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                }}>
                   <strong>Ventaja:</strong> Crea una experiencia más completa y agradable, permitiendo 
                   que tu público disfrute y permanezca más tiempo en contacto con tu marca.
                 </p>
@@ -1156,10 +1341,18 @@ const BrochurePresentation: React.FC = () => {
           
           <div style={{...orbPrimaryStyle, top: '30%', right: '20%'}}></div>
           
-          <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flex: 1 }}>
-            <div style={{ flex: 1 }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: window.innerWidth < 768 ? '20px' : '80px', 
+            alignItems: 'center', 
+            flex: 1,
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+            minHeight: window.innerWidth < 768 ? 'auto' : '100%',
+            padding: window.innerWidth < 768 ? '10px 0' : '0'
+          }}>
+            <div style={{ flex: 1, order: window.innerWidth < 768 ? 2 : 1 }}>
               <div style={serviceIconStyle}>
-                <Palette size={60} />
+                <Palette size={window.innerWidth < 768 ? 40 : 60} />
               </div>
               
               <h2 style={serviceTitleStyle}>Diseños de Piezas 2D y 3D</h2>
@@ -1171,14 +1364,20 @@ const BrochurePresentation: React.FC = () => {
                 producción final, materializamos ideas innovadoras.
               </p>
               
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
+              <div style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: window.innerWidth < 768 ? '8px' : '16px', 
+                marginBottom: window.innerWidth < 768 ? '20px' : '40px',
+                justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start'
+              }}>
                 {['Diseño Gráfico', 'Modelado 3D', 'Branding', 'Elementos Visuales'].map((feature, idx) => (
                   <span key={idx} style={{
                     background: 'linear-gradient(135deg, #ac41f2, #79f2e6)',
                     color: 'white',
-                    padding: '12px 24px',
+                    padding: window.innerWidth < 768 ? '8px 16px' : '12px 24px',
                     borderRadius: '25px',
-                    fontSize: '18px',
+                    fontSize: window.innerWidth < 768 ? '14px' : '18px',
                     fontWeight: 600
                   }}>
                     {feature}
@@ -1186,15 +1385,30 @@ const BrochurePresentation: React.FC = () => {
                 ))}
               </div>
               
-              <div style={{ padding: '30px', background: isDarkMode ? '#1a1a1a' : '#f8fafc', borderRadius: '16px' }}>
-                <p style={{ fontSize: '20px', color: isDarkMode ? '#aaa' : '#666', margin: 0 }}>
+              <div style={{ 
+                padding: window.innerWidth < 768 ? '20px' : '30px', 
+                background: isDarkMode ? '#1a1a1a' : '#f8fafc', 
+                borderRadius: '16px' 
+              }}>
+                <p style={{ 
+                  fontSize: window.innerWidth < 768 ? '16px' : '20px', 
+                  color: isDarkMode ? '#aaa' : '#666', 
+                  margin: 0,
+                  textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                }}>
                   <strong>Aplicaciones:</strong> Stands, decoración temática, señalización, 
                   elementos interactivos, piezas promocionales y ambientación de espacios.
                 </p>
               </div>
             </div>
             
-            <div style={{ flex: 0.4, display: 'flex', justifyContent: 'center' }}>
+            <div style={{ 
+              flex: window.innerWidth < 768 ? 'none' : '0.4', 
+              display: 'flex', 
+              justifyContent: 'center',
+              order: window.innerWidth < 768 ? 1 : 2,
+              width: window.innerWidth < 768 ? '100%' : 'auto'
+            }}>
               <div style={imageFrameStyle}>
                 <img 
                   src={serviceImages.diseño} 
@@ -1231,30 +1445,37 @@ const BrochurePresentation: React.FC = () => {
               />
             </div>
             
-            <h2 style={{ fontSize: '64px', fontWeight: 900, color: '#ac41f2', marginBottom: '40px' }}>
+            <h2 style={{ 
+              fontSize: window.innerWidth < 768 ? 'clamp(32px, 8vw, 48px)' : '64px', 
+              fontWeight: 900, 
+              color: '#ac41f2', 
+              marginBottom: window.innerWidth < 768 ? '30px' : '40px' 
+            }}>
               Contáctanos
             </h2>
             
             {/* Información de contacto principal */}
-            <div style={{ marginBottom: '80px' }}>
+            <div style={{ marginBottom: window.innerWidth < 768 ? '40px' : '80px' }}>
               <div style={{ 
-                fontSize: '48px', 
+                fontSize: window.innerWidth < 768 ? 'clamp(24px, 6vw, 32px)' : '48px', 
                 fontWeight: 'bold', 
                 color: isDarkMode ? '#ffffff' : '#1a1a1a', 
                 marginBottom: '20px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '20px'
+                gap: window.innerWidth < 768 ? '10px' : '20px',
+                flexDirection: window.innerWidth < 768 ? 'column' : 'row'
               }}>
-                <MessageCircle size={48} color="#79f2e6" />
+                <MessageCircle size={window.innerWidth < 768 ? 32 : 48} color="#79f2e6" />
                 +57 300 403 1332
               </div>
               <div style={{ 
-                fontSize: '24px', 
+                fontSize: window.innerWidth < 768 ? 'clamp(16px, 4vw, 20px)' : '24px', 
                 color: isDarkMode ? '#ccc' : '#666',
-                maxWidth: '600px',
-                lineHeight: '1.4'
+                maxWidth: window.innerWidth < 768 ? '100%' : '600px',
+                lineHeight: '1.4',
+                padding: window.innerWidth < 768 ? '0 20px' : '0'
               }}>
                 Oficina 705, edificio Sigma<br/>
                 avenida carrera 19 # 95-20 oficina 708
@@ -1265,11 +1486,13 @@ const BrochurePresentation: React.FC = () => {
             <div style={{
               background: 'linear-gradient(135deg, #ac41f2, #79f2e6)',
               color: 'white',
-              padding: '40px 60px',
+              padding: window.innerWidth < 768 ? '20px 30px' : '40px 60px',
               borderRadius: '24px',
-              fontSize: '28px',
+              fontSize: window.innerWidth < 768 ? 'clamp(18px, 4vw, 24px)' : '28px',
               fontWeight: 600,
-              marginBottom: '40px'
+              marginBottom: window.innerWidth < 768 ? '20px' : '40px',
+              textAlign: 'center',
+              maxWidth: window.innerWidth < 768 ? '90%' : 'none'
             }}>
               Transformemos ideas en experiencias únicas
             </div>
