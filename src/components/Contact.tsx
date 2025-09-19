@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, Instagram, MessageCircle, Send, MapPin, Clock, Star } from 'lucide-react';
+import { Phone, Mail, Instagram, MessageCircle, Send, MapPin, Clock } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { cn, fadeInUp, fadeInScale, staggerContainer } from '../lib/utils';
 
@@ -17,24 +17,8 @@ const Contact: React.FC = () => {
       description: "Respuesta inmediata",
       action: "Contactar ahora",
       gradient: "from-green-500 to-green-600",
-      href: "https://wa.me/+573004031332",
+      href: "https://wa.me/+573001005357",
       highlight: true
-    },
-    {
-      icon: <Phone className="w-7 h-7" />,
-      title: "Teléfono",
-      description: "Llamada directa",
-      action: "Llamar",
-      gradient: "from-vortize-purple-500 to-vortize-purple-700",
-      href: "tel:+573004031332"
-    },
-    {
-      icon: <Mail className="w-7 h-7" />,
-      title: "Email",
-      description: "Propuestas detalladas",
-      action: "Enviar correo",
-      gradient: "from-vortize-turquoise-400 to-vortize-turquoise-600",
-      href: "mailto:info@vortize.com"
     },
     {
       icon: <Instagram className="w-7 h-7" />,
@@ -42,7 +26,7 @@ const Contact: React.FC = () => {
       description: "Síguenos",
       action: "Ver trabajos",
       gradient: "from-pink-500 to-purple-600",
-      href: "https://instagram.com/vortize"
+      href: "https://www.instagram.com/vortize_mkt/?igsh=d3E0NjlheDh4eDF1&utm_source=qr#"
     }
   ];
 
@@ -137,7 +121,7 @@ const Contact: React.FC = () => {
 
         {/* Contact Methods */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 max-w-4xl mx-auto"
           variants={staggerContainer}
           initial="initial"
           animate={inView ? "animate" : "initial"}
@@ -217,8 +201,8 @@ const Contact: React.FC = () => {
               <div className="mb-8">
                 <div className="relative inline-block">
                   <img 
-                    src="/assets/logos/vortize-logo-white.png" 
-                    alt="Vortize" 
+                    src="/assets/logosblanconegro/image.png" 
+                    alt="Vortize BTL" 
                     className="h-16 mx-auto filter drop-shadow-2xl"
                     style={{ 
                       backgroundColor: 'transparent',
@@ -240,9 +224,9 @@ const Contact: React.FC = () => {
               </p>
 
               {/* Enhanced CTAs */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <div className="flex justify-center mb-12">
                 <motion.a
-                  href="https://wa.me/+573004031332"
+                  href="https://wa.me/+573001005357"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-white font-semibold py-4 px-8 rounded-2xl flex items-center justify-center gap-3 text-lg"
@@ -251,16 +235,6 @@ const Contact: React.FC = () => {
                 >
                   <MessageCircle className="w-5 h-5" />
                   Hablemos por WhatsApp
-                </motion.a>
-                
-                <motion.a
-                  href="mailto:info@vortize.com"
-                  className="btn-secondary font-semibold py-4 px-8 rounded-2xl flex items-center justify-center gap-3 text-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Send className="w-5 h-5" />
-                  Enviar Propuesta
                 </motion.a>
               </div>
 
@@ -291,7 +265,7 @@ const Contact: React.FC = () => {
           animate={inView ? "animate" : "initial"}
         >
           <p className="text-gray-400 mb-2">
-            © 2024 Vortize. Creando experiencias que trascienden.
+            © 2025 Vortize BTL. Creando experiencias que trascienden.
           </p>
           <div className="flex justify-center items-center gap-2 text-sm text-gray-500">
             <span>Hecho con</span>

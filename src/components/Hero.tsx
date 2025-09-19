@@ -44,8 +44,8 @@ const Hero: React.FC = () => {
           >
             <div className="relative inline-block">
               <img 
-                src="/assets/logos/vortize-logo-white.png" 
-                alt="Vortize" 
+                src="/assets/logosblanconegro/image.png" 
+                alt="Vortize BTL" 
                 className="h-16 md:h-20 mx-auto filter drop-shadow-2xl"
                 style={{ 
                   backgroundColor: 'transparent',
@@ -123,9 +123,14 @@ const Hero: React.FC = () => {
               className={cn("btn-primary text-white font-semibold py-5 px-10 rounded-2xl flex items-center gap-3 text-lg vortize-interactive")}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth' 
+                });
+              }}
             >
               <Sparkles className="w-5 h-5" />
-              Crear una Experiencia
+              Hablemos
             </motion.button>
             
             <motion.button 
