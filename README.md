@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Vortize: Eventos que trascienden 📈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Diseñamos tus experiencias más memorables!
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Propósito de esta landing page ☀️
 
-### `npm start`
+Su diseño se enfoca en presentarte de una manera dinámica y llamativa los servicios de planeación de eventos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Objetivos Principales 🎯
 
-### `npm test`
+* **Informar:** Detallar como llevamos a cabo nuestra vocación por la puesta en marcha de momentos inolvidables.
+* **Promover:** Impulsar el deseo por crear recuerdos que vayan más allá de nuestros eventos.
+* **Resolver Dudas:** Responder a las preguntas más comunes sobre nuestros servicios.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ¿Qué Encontrarás Aquí? 🔎
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Título envolvente:** "Vortize: Creamos Experiencias que Trascienden"
+* **Descripción clara:** Presentación directa de nuestro objetivo.
+* **Servicios detallados:** Integración de nuestro catálogo de experiencias.
+* **Valores insignia:**
+  * Creatividad Auténtica
+  * Gestión Integral
+  * Atención al Detalle
+  * Resultados Medibles
+* **Medios de comunicación:** Diferentes opciones de contacto para el cliente.
+* **Tiempos de respuesta:** Reduciendo falsas espectativas, con tiempos de reacción realistas.
+* **Ubicación:** Para los clientes más tradicionales en busca de un contacto directo.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Nuestro Público 🫵
 
-### `npm run eject`
+* Pymes, emprendimientos, compañias de alto renombre que deseen sumergir a sus empleados en una experiencia inolvidable.
+* Organizaciones públicas para el desarrollo de actividades lúdicas y/o al aire libre.
+* Cualquier inversionista cautivado por nuestra pasión en lo que nos desempeñamos.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Enlace a la landing Page 🔗
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Visita la Landing Page de Vortize][https://vortize-page.vercel.app]
