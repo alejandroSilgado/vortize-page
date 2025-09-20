@@ -990,30 +990,75 @@ const BrochurePresentationNew: React.FC = () => {
         </h2>
 
         {/* Información de contacto principal */}
-        <div style={{ marginBottom: window.innerWidth < 768 ? '40px' : '80px' }}>
+        <div style={{ 
+          marginBottom: window.innerWidth < 768 ? '40px' : '60px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: window.innerWidth < 768 ? '25px' : '35px'
+        }}>
+          
+          {/* Teléfono/WhatsApp */}
           <div style={{
-            fontSize: window.innerWidth < 768 ? 'clamp(24px, 6vw, 32px)' : '48px',
-            fontWeight: 'bold',
-            color: isDarkMode ? '#ffffff' : '#1a1a1a',
-            marginBottom: '20px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: window.innerWidth < 768 ? '10px' : '20px',
-            flexDirection: window.innerWidth < 768 ? 'column' : 'row'
+            gap: window.innerWidth < 768 ? '12px' : '20px',
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+            background: 'rgba(121, 242, 230, 0.1)',
+            padding: window.innerWidth < 768 ? '20px 30px' : '25px 40px',
+            borderRadius: '20px',
+            border: '2px solid rgba(121, 242, 230, 0.3)'
           }}>
-            <MessageCircle size={window.innerWidth < 768 ? 32 : 48} color="#79f2e6" />
-            +57 300 100 5357
+            <MessageCircle size={window.innerWidth < 768 ? 28 : 40} color="#79f2e6" />
+            <div style={{
+              fontSize: window.innerWidth < 768 ? 'clamp(22px, 5.5vw, 28px)' : '42px',
+              fontWeight: 'bold',
+              color: isDarkMode ? '#ffffff' : '#1a1a1a',
+              textAlign: 'center'
+            }}>
+              +57 300 100 5357
+            </div>
           </div>
 
+          {/* Email */}
           <div style={{
-            fontSize: window.innerWidth < 768 ? 'clamp(16px, 4vw, 20px)' : '24px',
-            color: isDarkMode ? '#ccc' : '#666',
-            maxWidth: window.innerWidth < 768 ? '100%' : '600px',
-            lineHeight: '1.4',
-            padding: window.innerWidth < 768 ? '0 20px' : '0'
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: window.innerWidth < 768 ? '12px' : '18px',
+            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+            background: 'rgba(172, 65, 242, 0.1)',
+            padding: window.innerWidth < 768 ? '18px 25px' : '22px 35px',
+            borderRadius: '18px',
+            border: '2px solid rgba(172, 65, 242, 0.3)'
           }}>
-            Oficina 705, edificio Sigma<br/>
+            <svg width={window.innerWidth < 768 ? 24 : 32} height={window.innerWidth < 768 ? 24 : 32} fill="#ac41f2" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <div style={{
+              fontSize: window.innerWidth < 768 ? 'clamp(18px, 4.5vw, 22px)' : '32px',
+              fontWeight: 'bold',
+              color: '#ac41f2',
+              textAlign: 'center'
+            }}>
+              vortizemarketingss@gmail.com
+            </div>
+          </div>
+
+          {/* Dirección */}
+          <div style={{
+            fontSize: window.innerWidth < 768 ? 'clamp(14px, 3.5vw, 18px)' : '22px',
+            color: isDarkMode ? '#ccc' : '#666',
+            textAlign: 'center',
+            lineHeight: '1.5',
+            maxWidth: window.innerWidth < 768 ? '90%' : '500px',
+            background: 'rgba(255, 255, 255, 0.05)',
+            padding: window.innerWidth < 768 ? '15px 20px' : '20px 30px',
+            borderRadius: '15px',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
+          }}>
+            📍 Oficina 705, edificio Sigma<br/>
             avenida carrera 19 # 95-20 oficina 708
           </div>
         </div>
@@ -1035,9 +1080,6 @@ const BrochurePresentationNew: React.FC = () => {
 
       </div>
 
-      <div style={{...footerStyle, color: '#ac41f2' }}>
-        <div style={{ fontSize: '16px', marginRight: '30px' }}>© 2025 Vortize BTL. Creando experiencias que trascienden.</div>
-      </div>
     </div>
   ];
 
